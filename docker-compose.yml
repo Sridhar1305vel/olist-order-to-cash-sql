@@ -1,0 +1,24 @@
+# One-command PostgreSQL for the project.
+#   DATA_DIR  = folder holding the Olist CSVs (default ./data)
+services:
+  db:
+    image: postgres:16
+    container_name: olist_pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: olist
+    ports:
+      - "5433:5432"          # host 5433 -> container 5432 (avoids clashing with a local Postgres)
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ${DATA_DIR:-./data}:/data:ro
+      - ./sql:/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d olist"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:

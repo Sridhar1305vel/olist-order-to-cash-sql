@@ -1,0 +1,7 @@
+# Raw Olist data is not redistributed here. Download it yourself (see data/README.md).
+data/*.csv
+data_sample/
+# Outputs from synthetic runs must never be published as findings.
+results/
+*.log
+.DS_Store
