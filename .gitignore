@@ -5,3 +5,4 @@ data_sample/
 results/
 *.log
 .DS_Store
+docs/interview_notes.md
