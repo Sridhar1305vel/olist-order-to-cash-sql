@@ -1,3 +1,5 @@
+Headline result: reconciled 99,441 orders (~BRL 15.8M); 98.91% matched, and 767 payments on cancelled or unavailable orders account for about 97% of the BRL 166K exception value. Late deliveries cut average review scores from 4.30 to 1.73.
+
 # Order-to-Cash Reconciliation & Revenue Analytics (PostgreSQL)
 
 An end-to-end SQL project on **~100,000 real e-commerce orders** (Olist, Brazil). It loads raw CSVs,
